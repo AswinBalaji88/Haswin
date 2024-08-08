@@ -11,5 +11,9 @@ Visual Studio Code,
 Web browser (Chrome),
 Selenium WebDriver for Chrome and
 Streamlit
+streamlit
+pymysql
+pandas
+
 
 And also I attached Red bus project illustration in main file for detailed explanation.
