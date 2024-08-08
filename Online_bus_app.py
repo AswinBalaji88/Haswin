@@ -4,11 +4,12 @@ import pymysql
 
 # Connect to MySQL database
 def get_connection():
-    return pymysql.connect(pymysql.connect(
-    host="localhost",
-    user="root",
-    password="",
-    database="redbus"))
+    return pymysql.connect(
+        host="localhost",
+        user="root",
+        password="",
+        database="redbus"
+    )
 
 # Function to fetch route names starting with a specific letter, arranged alphabetically
 def fetch_route_names(connection, starting_letter):
@@ -20,7 +21,7 @@ def fetch_route_names(connection, starting_letter):
 def fetch_data(connection, route_name, price_sort_order):
     price_sort_order_sql = "ASC" if price_sort_order == "Low to High" else "DESC"
     query = f"SELECT * FROM bus_routes WHERE Route_Name = %s ORDER BY Star_Rating DESC, Price {price_sort_order_sql}"
-    df = pd.read_sql(query, connection, params=(route_name))
+    df = pd.read_sql(query, connection, params=(route_name,))
     return df
 
 # Function to filter data based on Star_Rating and Bus_Type
@@ -75,7 +76,8 @@ def main():
             else:
                 st.write("No routes found starting with the specified letter.")
     finally:
-        connection.close()
+        if connection:
+            connection.close()
 
 if __name__ == '__main__':
     main()
