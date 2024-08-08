@@ -1,4 +1,4 @@
-pandas==20.2
+pandas==2.2.2
 streamlit==1.15.0
 pymysql==2.0.2
 # or if using mysql-connector-python
