@@ -1,7 +1,6 @@
-pandas==24.2
+pandas==20.2
 streamlit==1.15.0
 pymysql==2.0.2
-pip install --upgrade pip
 # or if using mysql-connector-python
 # mysql-connector-python==8.0.30
 
