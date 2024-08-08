@@ -1,5 +1,5 @@
 pymysql
-pandas
+pandas 24.2
 time
 selenium
 
