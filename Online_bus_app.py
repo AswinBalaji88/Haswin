@@ -1,5 +1,4 @@
 import streamlit as st
-import pymysql
 import pandas as pd
 
 # Connect to MySQL database
